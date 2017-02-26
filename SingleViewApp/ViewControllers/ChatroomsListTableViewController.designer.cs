@@ -14,5 +14,8 @@ namespace SingleViewApp
     [Register ("ChatroomsListTableViewController")]
     partial class ChatroomsListTableViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
