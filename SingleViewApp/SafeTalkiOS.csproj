@@ -84,6 +84,22 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ViewControllers\ReportChatroomViewController.cs" />
+    <Compile Include="ViewControllers\ReportChatroomViewController.designer.cs">
+      <DependentUpon>ReportChatroomViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ChatroomChatViewController.cs" />
+    <Compile Include="ViewControllers\ChatroomChatViewController.designer.cs">
+      <DependentUpon>ChatroomChatViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\CreateChatroomViewController.cs" />
+    <Compile Include="ViewControllers\CreateChatroomViewController.designer.cs">
+      <DependentUpon>CreateChatroomViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TermsConditionsViewController.cs" />
+    <Compile Include="ViewControllers\TermsConditionsViewController.designer.cs">
+      <DependentUpon>TermsConditionsViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewControllers\ChatroomDetailViewController.cs" />
     <Compile Include="ViewControllers\ChatroomDetailViewController.designer.cs">
       <DependentUpon>ChatroomDetailViewController.cs</DependentUpon>

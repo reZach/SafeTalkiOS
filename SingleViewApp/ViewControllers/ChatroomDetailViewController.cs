@@ -21,6 +21,7 @@ namespace SingleViewApp
 
             // Load chatroom name, from previous viewcontroller
             chatroomNameLabel.Text = ChatroomName;
+            Title = ChatroomName;
 
             // Load table of users
             UsersInChatroomTableView.Source = new UsersInChatroomTableSource(

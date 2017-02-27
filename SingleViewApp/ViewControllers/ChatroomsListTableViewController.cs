@@ -17,12 +17,23 @@ namespace SingleViewApp
         {
         }
 
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+
+            Title = "Chatrooms";
+        }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
+            // Load chatroom data
             List<Chatroom> chatrooms = GetChatrooms();
             TableView.Source = new ChatroomsListTableSource(chatrooms, this);
+
+            // Add create chatroom button
+            CreateAddChatroomButton();
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -35,6 +46,11 @@ namespace SingleViewApp
             {
                 chatroomDetailViewController.ChatroomName = SelectedChatroomName;
             }
+        }
+
+        [Action("UnwindToChatroomsListTableViewController:")]
+        public void UnwindToChatroomsListTableViewController(UIStoryboardSegue segue)
+        {
         }
 
         public string SelectedChatroomName { get; set; }
@@ -66,6 +82,19 @@ namespace SingleViewApp
 
             return chatrooms;
         }
+
+        private void CreateAddChatroomButton()
+        {
+            var viewController = this;
+
+            // https://developer.xamarin.com/recipes/ios/content_controls/navigation_controller/add_a_nav_bar_right_button/
+            NavigationItem.SetRightBarButtonItem(
+                new UIBarButtonItem(UIBarButtonSystemItem.Add, (sender, args) =>
+                {
+                    // CreateChatroomSegue
+                    viewController.PerformSegue("CreateChatroomSegue", viewController);
+                }), true);
+        }
     }
 
     // https://developer.xamarin.com/guides/ios/user_interface/tables/part_2_-_populating_a_table_with_data/
@@ -94,10 +123,9 @@ namespace SingleViewApp
             // if there are no cells to reuse, create a new one
             if (cell == null)
             {
-                cell = new UITableViewCell(UITableViewCellStyle.Value1, CellIdentifier);
+                cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
             }
-
-            cell.Accessory = UITableViewCellAccessory.DetailButton;
+            
             cell.TextLabel.Text = item;
 
             return cell;
