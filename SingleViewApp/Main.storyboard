@@ -319,6 +319,7 @@
                     <connections>
                         <segue id="8231" destination="6768" kind="show" identifier="ChatroomListToDetailSegue"/>
                         <segue id="8651" destination="8275" kind="show" identifier="CreateChatroomSegue"/>
+                        <segue id="10282" destination="8660" kind="show" identifier="ChatroomListToChatroomSegue"/>
                     </connections>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -363,7 +364,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue id="9022" destination="8660" kind="showDetail"/>
+                                    <segue id="9022" destination="8660" kind="show"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8235" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -449,7 +450,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue id="8772" destination="8660" kind="showDetail"/>
+                                    <segue id="8772" destination="8660" kind="show"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -485,7 +486,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9038" translatesAutoresizingMaskIntoConstraints="NO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9038" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="184" y="385" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back">
@@ -495,7 +496,7 @@
                                     <segue id="9645" destination="5151" kind="show"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="9647" translatesAutoresizingMaskIntoConstraints="NO" text="chatroom and messages view">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="9647" translatesAutoresizingMaskIntoConstraints="NO" text="chatroom and messages view" fixedFrame="YES">
                                 <rect key="frame" x="87" y="153" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -529,11 +530,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9649"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9652">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="9877" translatesAutoresizingMaskIntoConstraints="NO" text="Copy about reporting a chatroom">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="9877" translatesAutoresizingMaskIntoConstraints="NO" text="Copy about reporting a chatroom" fixedFrame="YES">
                                 <rect key="frame" x="73" y="259" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

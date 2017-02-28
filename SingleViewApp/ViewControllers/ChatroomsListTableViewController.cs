@@ -46,6 +46,18 @@ namespace SingleViewApp
             {
                 chatroomDetailViewController.ChatroomName = SelectedChatroomName;
             }
+
+            // Add to view controller stack
+            if (segue.Identifier == "CreateChatroomSegue")
+            {
+                var createChatroomViewController = segue.DestinationViewController as CreateChatroomViewController;
+
+                if (createChatroomViewController != null)
+                {
+                    createChatroomViewController.ViewControllerStack = new List<UIViewController>();
+                    createChatroomViewController.ViewControllerStack.Add(this);                   
+                }
+            }
         }
 
         [Action("UnwindToChatroomsListTableViewController:")]
@@ -123,12 +135,23 @@ namespace SingleViewApp
             // if there are no cells to reuse, create a new one
             if (cell == null)
             {
-                cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
+                cell = new UITableViewCell(UITableViewCellStyle.Value1, CellIdentifier);
             }
-            
+
+            cell.Accessory = UITableViewCellAccessory.DetailButton;
             cell.TextLabel.Text = item;
 
             return cell;
+        }
+
+        public override void AccessoryButtonTapped(UITableView tableView, NSIndexPath indexPath)
+        {
+            var chatroomName = Chatrooms[indexPath.Row].PublicName;
+            ParentViewController.SelectedChatroomName = chatroomName;
+
+            tableView.DeselectRow(indexPath, true);
+
+            ParentViewController.PerformSegue("ChatroomListToDetailSegue", ParentViewController);
         }
 
         // Move to the detail view controller if we click on a table cell
@@ -140,7 +163,9 @@ namespace SingleViewApp
             var chatroomName = Chatrooms[indexPath.Row].PublicName;
             ParentViewController.SelectedChatroomName = chatroomName;
 
-            ParentViewController.PerformSegue("ChatroomListToDetailSegue", ParentViewController);
+            tableView.DeselectRow(indexPath, true);
+
+            ParentViewController.PerformSegue("ChatroomListToChatroomSegue", ParentViewController);
         }
     }
 }
