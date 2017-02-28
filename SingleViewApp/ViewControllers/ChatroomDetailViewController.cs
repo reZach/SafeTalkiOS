@@ -28,6 +28,21 @@ namespace SingleViewApp
                 AllUsersInChatroom(GetCurrentChatroom(), GetAllUsers()));
         }
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+
+            if (segue.Identifier == "ChatroomDetailToChatroomSegue")
+            {
+                var chatroomChatController = segue.DestinationViewController as ChatroomChatViewController;
+
+                if (chatroomChatController != null)
+                {
+                    chatroomChatController.ViewControllerStack = new List<UIViewController>();
+                }
+            }
+        }
+
         public string ChatroomName { get; set; }
         private string GetAllUsersURI { get { return "https://safetalkapi.azurewebsites.net/api/user/list"; } }
         private string GetCurrentChatroomURI { get { return "https://safetalkapi.azurewebsites.net/api/chatroom/get?name={name}"; } }

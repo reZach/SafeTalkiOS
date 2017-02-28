@@ -58,6 +58,15 @@ namespace SingleViewApp
                     createChatroomViewController.ViewControllerStack.Add(this);                   
                 }
             }
+            else if (segue.Identifier == "ChatroomListToChatroomSegue")
+            {
+                var chatroomChatController = segue.DestinationViewController as ChatroomChatViewController;
+
+                if (chatroomChatController != null)
+                {
+                    chatroomChatController.ViewControllerStack = new List<UIViewController>();
+                }
+            }
         }
 
         [Action("UnwindToChatroomsListTableViewController:")]

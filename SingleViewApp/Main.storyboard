@@ -364,7 +364,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue id="9022" destination="8660" kind="show"/>
+                                    <segue id="9022" destination="8660" kind="show" identifier="ChatroomDetailToChatroomSegue"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8235" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">

@@ -20,11 +20,14 @@ namespace SingleViewApp
             // parent will be null when clicking the back button
             if (parent == null)
             {
-                // Pops back 2 controllers
-                ViewControllerStack[ViewControllerStack.Count - 1].NavigationController.PopToViewController(ViewControllerStack[0], true);
+                if (ViewControllerStack != null && ViewControllerStack.Count == 2)
+                {
+                    // Pops back 2 controllers
+                    ViewControllerStack[ViewControllerStack.Count - 1].NavigationController.PopToViewController(ViewControllerStack[0], true);
 
-                // Refreshes view
-                ReloadInputViews();
+                    // Refreshes view
+                    ReloadInputViews();
+                }
             }           
         }
 
