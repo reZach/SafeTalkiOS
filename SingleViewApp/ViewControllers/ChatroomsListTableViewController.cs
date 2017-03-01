@@ -144,23 +144,12 @@ namespace SingleViewApp
             // if there are no cells to reuse, create a new one
             if (cell == null)
             {
-                cell = new UITableViewCell(UITableViewCellStyle.Value1, CellIdentifier);
+                cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
             }
 
-            cell.Accessory = UITableViewCellAccessory.DetailButton;
             cell.TextLabel.Text = item;
 
             return cell;
-        }
-
-        public override void AccessoryButtonTapped(UITableView tableView, NSIndexPath indexPath)
-        {
-            var chatroomName = Chatrooms[indexPath.Row].PublicName;
-            ParentViewController.SelectedChatroomName = chatroomName;
-
-            tableView.DeselectRow(indexPath, true);
-
-            ParentViewController.PerformSegue("ChatroomListToDetailSegue", ParentViewController);
         }
 
         // Move to the detail view controller if we click on a table cell

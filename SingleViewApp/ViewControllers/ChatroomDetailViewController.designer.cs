@@ -16,19 +16,10 @@ namespace SingleViewApp
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel chatroomNameLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView UsersInChatroomTableView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (chatroomNameLabel != null) {
-                chatroomNameLabel.Dispose ();
-                chatroomNameLabel = null;
-            }
-
             if (UsersInChatroomTableView != null) {
                 UsersInChatroomTableView.Dispose ();
                 UsersInChatroomTableView = null;

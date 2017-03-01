@@ -317,7 +317,6 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue id="8231" destination="6768" kind="show" identifier="ChatroomListToDetailSegue"/>
                         <segue id="8651" destination="8275" kind="show" identifier="CreateChatroomSegue"/>
                         <segue id="10282" destination="8660" kind="show" identifier="ChatroomListToChatroomSegue"/>
                     </connections>
@@ -340,13 +339,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7408" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="101" y="83" width="185" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8233" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="54" y="493" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -355,16 +347,6 @@
                                 </state>
                                 <connections>
                                     <segue id="9875" destination="9651" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8234" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="247" y="493" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Join">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue id="9022" destination="8660" kind="show" identifier="ChatroomDetailToChatroomSegue"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8235" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -392,31 +374,26 @@
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="7408"/>
                                 <exclude reference="8233"/>
-                                <exclude reference="8234"/>
                                 <exclude reference="8235"/>
                                 <exclude reference="8252"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="7408"/>
                                 <include reference="8233"/>
-                                <include reference="8234"/>
                                 <include reference="8235"/>
                                 <include reference="8252"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="chatroomNameLabel" destination="7408" id="name-outlet-7408"/>
                         <outlet property="UsersInChatroomTableView" destination="8235" id="name-outlet-8235"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6770" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2010" y="-140"/>
+            <point key="canvasLocation" x="2593" y="585"/>
         </scene>
         <scene sceneID="8274">
             <objects>
@@ -472,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8277" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="717"/>
+            <point key="canvasLocation" x="1982" y="-423"/>
         </scene>
         <scene sceneID="8659">
             <objects>
@@ -486,16 +463,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9038" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="184" y="385" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue id="9645" destination="5151" kind="show"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="9647" translatesAutoresizingMaskIntoConstraints="NO" text="chatroom and messages view" fixedFrame="YES">
                                 <rect key="frame" x="87" y="153" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -506,21 +473,22 @@
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="9038"/>
                                 <exclude reference="9647"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="9038"/>
                                 <include reference="9647"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue id="10499" destination="6768" kind="show" identifier="ChatroomChatToDetailSegue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8662" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578" y="233"/>
+            <point key="canvasLocation" x="1995" y="581"/>
         </scene>
         <scene sceneID="9650">
             <objects>
@@ -557,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9653" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2511" y="-1029"/>
+            <point key="canvasLocation" x="3121" y="591"/>
         </scene>
     </scenes>
 </document>
